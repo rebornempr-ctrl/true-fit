@@ -1,0 +1,23 @@
+{
+  "overview": "True Fit is a clean, animated clothing brand website with a public product showcase, shopping cart with WhatsApp checkout, and an admin panel for managing the product catalog — no coding required.",
+  "features": [
+    "Animated hero section and product grid with scroll-triggered effects",
+    "Full product catalog with category filters and search",
+    "Shopping cart with WhatsApp checkout flow",
+    "Protected admin panel to add, edit, and remove products",
+    "Product image uploads",
+    "Contact form for customer enquiries",
+    "Fully responsive design for mobile and desktop"
+  ],
+  "category": "ecommerce",
+  "tags": [
+    "clothing",
+    "fashion",
+    "ecommerce",
+    "admin-panel",
+    "shopping-cart",
+    "animations",
+    "whatsapp"
+  ],
+  "last_updated": "2026-04-16T17:50:21.698Z"
+}

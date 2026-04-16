@@ -1,0 +1,66 @@
+type UpdateProductArgs = 
+ record {
+   category: text;
+   colors: vec text;
+   description: text;
+   id: ProductId;
+   imageUrls: vec text;
+   name: text;
+   price: nat;
+   sizes: vec text;
+ };
+type Timestamp = int;
+type ProductId = nat;
+type Product = 
+ record {
+   category: text;
+   colors: vec text;
+   createdAt: Timestamp;
+   description: text;
+   id: ProductId;
+   imageUrls: vec text;
+   isActive: bool;
+   name: text;
+   price: nat;
+   sizes: vec text;
+   updatedAt: Timestamp;
+ };
+type CreateProductArgs = 
+ record {
+   category: text;
+   colors: vec text;
+   description: text;
+   imageUrls: vec text;
+   name: text;
+   price: nat;
+   sizes: vec text;
+ };
+type CreateContactArgs = 
+ record {
+   email: text;
+   message: text;
+   name: text;
+ };
+type ContactSubmission = 
+ record {
+   createdAt: Timestamp;
+   email: text;
+   id: ContactId;
+   message: text;
+   name: text;
+ };
+type ContactId = nat;
+service : {
+  addProduct: (args: CreateProductArgs) -> (Product);
+  deleteProduct: (id: ProductId) -> (bool);
+  getActiveProducts: () -> (vec Product) query;
+  getAdmin: () -> (principal) query;
+  getAllProducts: () -> (vec Product) query;
+  getContactSubmissions: () -> (vec ContactSubmission);
+  getProductById: (id: ProductId) -> (opt Product) query;
+  getProductsByCategory: (category: text) -> (vec Product) query;
+  initialize: () -> ();
+  submitContact: (args: CreateContactArgs) -> (ContactSubmission);
+  toggleProductActive: (id: ProductId) -> (opt Product);
+  updateProduct: (args: UpdateProductArgs) -> (opt Product);
+}

@@ -1,0 +1,52 @@
+// Version: 1.0.0
+type ContactId__479742040 = Nat;
+type ContactId__86650761 = ContactId__479742040;
+type ContactSubmission__288046300 =
+  {
+    createdAt : Timestamp__262770854;
+    email : Text;
+    id : ContactId__86650761;
+    message : Text;
+    name : Text
+  };
+type ContactSubmission__611189437 = ContactSubmission__288046300;
+type Nat__490723111 = Nat__920180692;
+type Nat__920180692 = Nat;
+type ProductId__160010635 = Nat;
+type ProductId__442338476 = ProductId__160010635;
+type Product__750902660 =
+  {
+    category : Text;
+    colors : [Text];
+    createdAt : Timestamp__77860887;
+    description : Text;
+    id : ProductId__442338476;
+    imageUrls : [Text];
+    isActive : Bool;
+    name : Text;
+    price : Nat;
+    sizes : [Text];
+    updatedAt : Timestamp__77860887
+  };
+type Product__843433313 = Product__750902660;
+type Timestamp__262770854 = Timestamp__301639476;
+type Timestamp__301639476 = Int;
+type Timestamp__77860887 = Timestamp__301639476;
+actor {
+  stable var admin : Principal;
+  stable contacts :
+    {
+      var blockIndex : Nat__490723111;
+      var blocks : [var [var ?ContactSubmission__611189437]];
+      var elementIndex : Nat__490723111
+    };
+  stable var initialized : Bool;
+  stable var nextContactId : {var value : Nat};
+  stable var nextProductId : {var value : Nat};
+  stable products :
+    {
+      var blockIndex : Nat__490723111;
+      var blocks : [var [var ?Product__843433313]];
+      var elementIndex : Nat__490723111
+    }
+};
